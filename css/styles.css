@@ -1,0 +1,41 @@
+.left-panel {
+    position: relative;
+    float: left;
+    width: 24%;
+    border: 1px solid black;
+    height: 100%;
+}
+.center-panel {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-image: url("../images/track.png");
+    background-size: 100% 100%;
+}
+.right-panel {
+    position: relative;
+    float: left;
+    width: 24%;
+    border: 1px solid black;
+    height: 100%;
+}
+.primary-car {
+    position: relative;
+    top: 80%;
+    margin: 0 auto;
+    background: black;
+    z-index: 9999;
+    width: 5.5%;
+    height: 13%;
+    background-image: url("../images/primaryCar.jpg");
+    background-size: 100% 100%
+}
+.random-car {
+    position: relative;
+    width: 5%;
+    height: 10%;
+    background-image: url("../images/randomCar1.jpg");
+    background-size: 100% 100%;
+    left: 5%;
+}
