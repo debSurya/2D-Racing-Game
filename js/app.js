@@ -1,14 +1,7 @@
-$(document).ready(gameModule.init);
-
 var gameModule = {
-    init: func() {
+    init: function () {
         $(".back-panel").hide();
-        $(".game-name").off("click").on("click", function () {
-            $(".intro-panel").hide();
-            $(".back-panel").show();
-            gameModule.initializeElements();
-            gameModule.shiftTrack();
-        })
+        $(".game-name").off("click").on("click", gameModule.startGameEvent);
     },
     score: 0,
     crashCount: 0,
@@ -36,6 +29,13 @@ var gameModule = {
     primaryCar: undefined,
     trackContainer: undefined,
     shiftCarLimit: undefined,
+    //the beginning of the game
+    startGameEvent: function () {
+        $(".intro-panel").hide();
+        $(".back-panel").show();
+        gameModule.initializeElements();
+        gameModule.shiftTrack();
+    },
     //sets the value of the pressed key to true in the selectedKey object's keyCode property
     keyCodeSetter: function (event) {
         gameModule.selectedKey[event.which] = true;
@@ -212,6 +212,7 @@ var gameModule = {
         }
         return overlapChecker;
     },
+    //the function for checking the collision conditions
     triggerCollision: function () {
         var obstacleCar, primaryCarLeftPosition, primaryCarTopPosition, primaryCarHeight, primaryCarWidth, primaryCarTotalHeight, primaryCarTotalWidth, obstacleCarLeftPosition, obstacleCarTopPosition, obstacleCarheight, obstacleCarHeight, obstacleCarWidth, obstacleCarTotalHeight, obstacleCarTotalWidth, i;
         if (gameModule.obstacleCars.length) {
@@ -237,7 +238,9 @@ var gameModule = {
             }
         }
     },
+    //the actions occured on respective collision conditions
     collisionActions: {
+        //the first two collision actions
         carBump: function (obstaclePosition) {
             clearInterval(gameModule.collisionHolder);
             clearInterval(gameModule.carControls);
@@ -274,6 +277,7 @@ var gameModule = {
                 }
             });
         },
+        //the final collision action
         carCrash: function () {
             gameModule.onCrash = 0;
             $(".life-holder").children().eq(0).remove();
@@ -296,6 +300,7 @@ var gameModule = {
             $(".gameover-panel").show();
         }
     },
+    //the game reset function which clears all the intervals
     resetGame: function () {
         $(".gameover-panel").hide();
         $(".obstacleCar").remove();
@@ -320,3 +325,5 @@ var gameModule = {
         gameModule.shiftTrack();
     }
 }
+
+$(document).ready(gameModule.init);
