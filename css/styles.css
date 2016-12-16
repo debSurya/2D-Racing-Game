@@ -1,41 +1,174 @@
-.left-panel {
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+}
+.score-label {
+    text-shadow: 0px 0px 2px black;
+    font-size: 1.3em;
+}
+.game-name {
+    top: 62%;
+    left: 2%;
     position: relative;
-    float: left;
-    width: 24%;
-    border: 1px solid black;
+    font-family: sans-serif;
+    font-size: 3em;
+    font-style: oblique;
+    text-shadow: 3px 1px 5px black
+}
+.game-name:hover {
+    -webkit-mask-image: linear-gradient(-60deg, rgba(1, 0, 0, .7) 50%, #000 70%, rgba(1, 0, 0, .7) 90%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+    text-shadow: 3px 1px 5px black;
+    cursor: none
+}
+@-webkit-keyframes shine {
+    from {
+        -webkit-mask-position: 200%;
+    }
+    to {
+        -webkit-mask-position: -200%;
+    }
+}
+.intro-panel {
+    width: 100%;
     height: 100%;
+    background-image: url("../images/intro.jpg");
+    background-size: 100% 120%;
+    background-position: center
+}
+.gameover-panel {
+    background-image: url("../images/gameover.gif");
+    background-size: 150% 150%;
+    background-position: center;
+    position: absolute;
+    z-index: 1100;
+    width: 40%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.life-holder {
+    top: 10%;
+    left: 5%;
+    position: absolute;
+    width: 8%;
+    height: 35%
+}
+.life {
+    margin-bottom: 5%;
+    position: relative;
+    border-radius: 10px;
+    width: 90%;
+    height: 33%;
+    background-image: url("../images/skull.gif");
+    background-size: 120% 120%;
+    background-position: center
+}
+.score-panel {
+    position: absolute;
+    width: 10%;
+    height: 3%;
+    top: 50%;
+    left: 5%;
+}
+.back-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg-water.jpg");
+    background-size: 100% 100%
 }
 .center-panel {
+    margin: 0 auto;
     position: relative;
-    float: left;
     width: 50%;
     height: 100%;
     background-image: url("../images/track.png");
     background-size: 100% 100%;
-}
-.right-panel {
-    position: relative;
-    float: left;
-    width: 24%;
-    border: 1px solid black;
-    height: 100%;
+    -moz-background-size: 100% 100%;
+    z-index: 99;
+    box-shadow: 0px 0px 60px 22px black;
 }
 .primary-car {
+    border-radius: 12px;
     position: relative;
+    left: 48%;
     top: 80%;
-    margin: 0 auto;
     background: black;
     z-index: 9999;
     width: 5.5%;
     height: 13%;
     background-image: url("../images/primaryCar.jpg");
-    background-size: 100% 100%
+    background-size: 100% 100%;
+    box-shadow: 1px 1px 10px 4px black;
 }
-.random-car {
-    position: relative;
+.car-crash {
+    width: 10% !important;
+    height: 10% !important;
+    background: none !important;
+    background-image: url('../images/crash.gif') !important;
+    background-size: 100% 100% !important;
+    box-shadow: none !important
+}
+.random-car1,
+.random-car2,
+.random-car3,
+.random-car4,
+.random-car5,
+.random-car6,
+.random-car7,
+.random-car8 {
+    border-radius: 7px;
+    position: absolute;
+    top: -200px;
     width: 5%;
     height: 10%;
-    background-image: url("../images/randomCar1.jpg");
     background-size: 100% 100%;
-    left: 5%;
+    z-index: 999;
+    box-shadow: 1px 1px 10px 4px black;
+}
+.random-car9,
+.random-car10 {
+    border-radius: 4px;
+    position: absolute;
+    top: -200px;
+    width: 7%;
+    background: black;
+    height: 25%;
+    background-size: 100% 100%;
+    z-index: 999;
+    box-shadow: 1px 1px 10px 4px black;
+}
+.random-car1 {
+    background-image: url("../images/randomCar1.jpg")
+}
+.random-car2 {
+    background-image: url("../images/randomCar2.jpg")
+}
+.random-car3 {
+    background-image: url("../images/randomCar3.jpg")
+}
+.random-car4 {
+    background-image: url("../images/randomCar4.jpg")
+}
+.random-car5 {
+    background-image: url("../images/randomCar5.jpg")
+}
+.random-car6 {
+    background-image: url("../images/randomCar6.jpg")
+}
+.random-car7 {
+    background-image: url("../images/randomCar7.jpg")
+}
+.random-car8 {
+    background-image: url("../images/randomCar8.jpg")
+}
+.random-car9 {
+    background-image: url("../images/randomCar9.jpg")
+}
+.random-car10 {
+    background-image: url("../images/randomCar10.jpg")
 }
